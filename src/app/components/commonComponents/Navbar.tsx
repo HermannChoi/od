@@ -3,7 +3,6 @@
 /** @jsxImportSource @emotion/react */
 
 import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
-import { css } from "@emotion/react";
 import { useRouter } from "next/navigation";
 import { navbarMenu } from "@/app/constants/navbarMenu";
 import useNavbarStore from "@/app/stores/navbarStore/useNavbarStore";
@@ -13,13 +12,13 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const router = useRouter();
-  const [cookies] = useCookies(["name"]);
+  const [cookies] = useCookies(["token"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const { whichMenu, setWhichMenu } = useNavbarStore();
 
   useEffect(() => {
-    if (cookies.name) {
+    if (cookies.token) {
       setIsLoggedIn(true);
     }
   }, []);

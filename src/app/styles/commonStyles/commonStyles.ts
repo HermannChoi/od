@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { showUp2, widthHeightZeroTo40 } from "./keyframes";
+import { fadeOut, showUp, showUp2 } from "./keyframes";
 
 export const commonColors = {
   representative: "#a2ffe3",
@@ -70,6 +70,18 @@ export const layoutStyle = [
     height: 90vh;
     border-radius: 30px;
     background-color: ${commonColors.background};
+    backdrop-filter: blur(20px);
+  `,
+];
+
+export const blackPageStyle = [
+  css`
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    border-radius: 30px;
+    background-color: rebeccapurple;
+    animation: ${fadeOut} 0.5s forwards;
   `,
 ];
 
@@ -78,5 +90,6 @@ export const mainStyle = [
     width: 100%;
     height: calc(100% - 60px);
     padding: 20px 10px;
+    animation: ${showUp} 0.3s ease-in-out;
   `,
 ];

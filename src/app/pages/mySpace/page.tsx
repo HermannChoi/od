@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 /** @jsxImportSource @emotion/react */
 
@@ -12,6 +13,7 @@ const MySpace = () => {
   useEffect(() => {
     setWhichMenu(navbarMenu[2].key);
   }, []);
+
   return (
     <div css={layoutStyle}>
       <Navbar />

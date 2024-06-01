@@ -1,4 +1,5 @@
 "use client";
+import WelcomeMessage from "@/app/components/commonComponents/WelcomeMessage";
 /** @jsxImportSource @emotion/react */
 
 import NavbarForSignInUp from "@/app/components/signInUpComponents/NavbarForSignInUp";
@@ -9,14 +10,18 @@ import {
 } from "@/app/styles/commonStyles/commonStyles";
 import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
 
 const SignInPage = () => {
+  const router = useRouter();
+
   const [signInInfo, setSignInInfo] = useState({
     email: "",
     password: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChangeSignInInfo = (sort: string, value: string) => {
     setSignInInfo((prev) => ({ ...prev, [sort]: value }));
@@ -27,10 +32,15 @@ const SignInPage = () => {
     if (signInInfo.email === "") return setErrorMessage("이메일을 적어주세요.");
     if (signInInfo.password === "")
       return setErrorMessage("비밀번호를 적어주세요.");
+    setIsLoggedIn(true);
+    setTimeout(() => {
+      router.push("/");
+    }, 2000);
   };
 
   return (
     <div css={[layoutStyle]}>
+      {isLoggedIn && <WelcomeMessage />}
       <NavbarForSignInUp />
       <main css={[mainStyle, flexColumnCenter, `gap: 50px;`]}>
         <h1 css={[`margin-top: 100px;`]}>Sign In</h1>

@@ -15,10 +15,11 @@ export const homePageStyles = {
     ],
     title: [
       css`
-        font-size: 1.5rem;
+        font-size: 2rem;
         cursor: pointer;
         transition: 0.2s;
         &:hover {
+          transform: scale(1.1);
           text-shadow: 0 0 10px black;
         }
       `,
