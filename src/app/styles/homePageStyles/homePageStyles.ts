@@ -15,7 +15,7 @@ export const homePageStyles = {
     ],
     title: [
       css`
-        font-size: 1rem;
+        font-size: 1.5rem;
         cursor: pointer;
         transition: 0.2s;
         &:hover {
@@ -31,7 +31,7 @@ export const homePageStyles = {
           border: none;
           background-color: ${key === whichMenu ? `#00000044` : `transparent`};
           font-size: 1rem;
-          transition: 0.2s;
+          transition: background-color 0.2s;
           ${key === whichMenu && `border-bottom: 1px solid white;`}
           &:hover {
             background-color: #00000066;
@@ -39,10 +39,17 @@ export const homePageStyles = {
         `,
       ];
     },
-    signoutButton: [
+    signInUpSection: [
+      css`
+        display: flex;
+        gap: 10px;
+      `,
+    ],
+    signInUpButton: [
       css`
         width: max-content;
         padding: 8px 15px;
+        border: 1px solid white;
         border-radius: 20px;
         background-color: transparent;
         transition: 0.2s;

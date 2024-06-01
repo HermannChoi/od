@@ -69,7 +69,6 @@ export const layoutStyle = [
     min-width: 350px;
     height: 90vh;
     border-radius: 30px;
-    back-filter: blur(20px);
     background-color: ${commonColors.background};
   `,
 ];

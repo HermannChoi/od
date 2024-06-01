@@ -10,7 +10,7 @@ const MySpace = () => {
   const { setWhichMenu } = useNavbarStore();
 
   useEffect(() => {
-    setWhichMenu(navbarMenu[1].key);
+    setWhichMenu(navbarMenu[2].key);
   }, []);
   return (
     <div css={layoutStyle}>

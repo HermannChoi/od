@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 /** @jsxImportSource @emotion/react */
 
@@ -7,11 +8,21 @@ import { useRouter } from "next/navigation";
 import { navbarMenu } from "@/app/constants/navbarMenu";
 import useNavbarStore from "@/app/stores/navbarStore/useNavbarStore";
 import Title from "./Title";
+import { useCookies } from "react-cookie";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const router = useRouter();
+  const [cookies] = useCookies(["name"]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const { whichMenu, setWhichMenu } = useNavbarStore();
+
+  useEffect(() => {
+    if (cookies.name) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <nav css={homePageStyles.navbar.outline}>
@@ -32,21 +43,25 @@ const Navbar = () => {
           );
         })}
       </section>
-      <section
-        css={[
-          css`
-            display: flex;
-            gap: 10px;
-          `,
-        ]}
-      >
-        <button
-          onClick={() => router.push("/pages/signIn")}
-          css={homePageStyles.navbar.signoutButton}
-        >
-          로그인
-        </button>
-        <button css={homePageStyles.navbar.signoutButton}>회원가입</button>
+      <section css={homePageStyles.navbar.signInUpSection}>
+        {isLoggedIn ? (
+          <button css={homePageStyles.navbar.signInUpButton}>로그아웃</button>
+        ) : (
+          <>
+            <button
+              onClick={() => router.push("/pages/signIn")}
+              css={homePageStyles.navbar.signInUpButton}
+            >
+              로그인
+            </button>
+            <button
+              onClick={() => router.push("/pages/signUp")}
+              css={homePageStyles.navbar.signInUpButton}
+            >
+              회원가입
+            </button>
+          </>
+        )}
       </section>
     </nav>
   );

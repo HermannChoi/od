@@ -11,7 +11,7 @@ const WritePage = () => {
   const { setWhichMenu } = useNavbarStore();
 
   useEffect(() => {
-    setWhichMenu(navbarMenu[0].key);
+    setWhichMenu(navbarMenu[1].key);
   }, []);
 
   return (

@@ -17,7 +17,7 @@ const Title = () => {
       }}
       css={homePageStyles.navbar.title}
     >
-      JunsuYunseok TP
+      OD
     </h1>
   );
 };
