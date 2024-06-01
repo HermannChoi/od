@@ -62,10 +62,22 @@ export const delayShowUpAni = (delay: number) => {
   ];
 };
 
-export const layoutStyle = css`
-  width: 90%;
-  height: 90vh;
-  border-radius: 30px;
-  back-filter: blur(20px);
-  background-color: ${commonColors.background};
-`;
+export const layoutStyle = [
+  flexColumnCenter,
+  css`
+    width: 90%;
+    min-width: 350px;
+    height: 90vh;
+    border-radius: 30px;
+    back-filter: blur(20px);
+    background-color: ${commonColors.background};
+  `,
+];
+
+export const mainStyle = [
+  css`
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: 20px 10px;
+  `,
+];
