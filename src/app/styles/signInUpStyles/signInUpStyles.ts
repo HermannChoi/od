@@ -42,6 +42,13 @@ export const signInUpStyles = {
       }
     `,
   ],
+  disabled: [
+    css`
+      border-color: #ffffff80;
+      color: #ffffff80;
+      cursor: not-allowed;
+    `,
+  ],
   visibilityButton: [
     flexCenterX2,
     css`

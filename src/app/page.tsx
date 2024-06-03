@@ -2,10 +2,7 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import {
-  blackPageStyle,
-  layoutStyle,
-} from "./styles/commonStyles/commonStyles";
+import { coverPageStyle, mainStyle } from "./styles/commonStyles/commonStyles";
 import Navbar from "./components/commonComponents/Navbar";
 import useNavbarStore from "./stores/navbarStore/useNavbarStore";
 import { useEffect } from "react";
@@ -19,9 +16,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div css={layoutStyle}>
-      <div css={blackPageStyle} />
+    <>
+      <div css={coverPageStyle} />
       <Navbar />
-    </div>
+      <main css={[mainStyle]}></main>
+    </>
   );
 }

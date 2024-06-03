@@ -5,7 +5,6 @@ import WelcomeMessage from "@/app/components/commonComponents/WelcomeMessage";
 import NavbarForSignInUp from "@/app/components/signInUpComponents/NavbarForSignInUp";
 import {
   flexColumnCenter,
-  layoutStyle,
   mainStyle,
 } from "@/app/styles/commonStyles/commonStyles";
 import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
@@ -39,7 +38,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div css={[layoutStyle]}>
+    <>
       {isLoggedIn && <WelcomeMessage />}
       <NavbarForSignInUp />
       <main css={[mainStyle, flexColumnCenter, `gap: 50px;`]}>
@@ -72,7 +71,7 @@ const SignInPage = () => {
           </Link>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 

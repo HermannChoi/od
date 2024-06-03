@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import useNavbarStore from "@/app/stores/navbarStore/useNavbarStore";
 import { navbarMenu } from "@/app/constants/navbarMenu";
 import Navbar from "@/app/components/commonComponents/Navbar";
-import { layoutStyle } from "@/app/styles/commonStyles/commonStyles";
+import { mainStyle } from "@/app/styles/commonStyles/commonStyles";
+
 const MySpace = () => {
   const { setWhichMenu } = useNavbarStore();
 
@@ -15,9 +16,10 @@ const MySpace = () => {
   }, []);
 
   return (
-    <div css={layoutStyle}>
+    <>
       <Navbar />
-    </div>
+      <main css={[mainStyle]}></main>
+    </>
   );
 };
 

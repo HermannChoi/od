@@ -55,7 +55,10 @@ const Navbar = () => {
             </button>
             <button
               onClick={() => router.push("/pages/signUp")}
-              css={homePageStyles.navbar.signInUpButton}
+              css={[
+                homePageStyles.navbar.signInUpButton,
+                homePageStyles.navbar.SignUpBtnHover,
+              ]}
             >
               회원가입
             </button>

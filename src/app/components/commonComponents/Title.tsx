@@ -2,20 +2,13 @@
 /** @jsxImportSource @emotion/react */
 
 import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Title = () => {
-  const router = useRouter();
-
   return (
-    <h1
-      onClick={() => {
-        router.push("/");
-      }}
-      css={homePageStyles.navbar.title}
-    >
+    <Link href={"/"} css={homePageStyles.navbar.title}>
       OD
-    </h1>
+    </Link>
   );
 };
 

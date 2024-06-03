@@ -5,7 +5,6 @@ import NavbarForSignInUp from "@/app/components/signInUpComponents/NavbarForSign
 import {
   flexCenterX2,
   flexColumnCenter,
-  layoutStyle,
   mainStyle,
 } from "@/app/styles/commonStyles/commonStyles";
 import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
@@ -40,7 +39,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div css={[layoutStyle]}>
+    <>
       <NavbarForSignInUp />
       <main css={[mainStyle, flexColumnCenter, `gap: 50px;`]}>
         <h1 css={[`margin-top: 100px;`]}>Sign Up</h1>
@@ -102,7 +101,7 @@ const SignUpPage = () => {
           </Link>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 

@@ -16,11 +16,11 @@ export const homePageStyles = {
     title: [
       css`
         font-size: 2rem;
-        cursor: pointer;
+        font-weight: bold;
         transition: 0.2s;
         &:hover {
-          transform: scale(1.1);
-          text-shadow: 0 0 10px black;
+          transform: scale(1.05);
+          text-shadow: 0 0 20px black;
         }
       `,
     ],
@@ -57,6 +57,15 @@ export const homePageStyles = {
         &:hover {
           background-color: #00000020;
           font-weight: bold;
+        }
+      `,
+    ],
+    SignUpBtnHover: [
+      css`
+        &:hover {
+          border: 1px solid beige;
+          background-color: #ffffff;
+          color: #000000;
         }
       `,
     ],

@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { fadeOut, showUp, showUp2 } from "./keyframes";
+import { fadeIn, fadeOut, showDown, showUp, showUp2 } from "./keyframes";
 
 export const commonColors = {
   representative: "#a2ffe3",
@@ -62,25 +62,15 @@ export const delayShowUpAni = (delay: number) => {
   ];
 };
 
-export const layoutStyle = [
-  flexColumnCenter,
-  css`
-    width: 90%;
-    min-width: 350px;
-    height: 90vh;
-    border-radius: 30px;
-    background-color: ${commonColors.background};
-    backdrop-filter: blur(20px);
-  `,
-];
-
-export const blackPageStyle = [
+export const coverPageStyle = [
   css`
     position: absolute;
     width: 100%;
     height: 90vh;
-    border-radius: 30px;
-    background-color: rebeccapurple;
+    border-radius: 10px;
+    background-color: beige;
+    background-color: #000000;
+    // backdrop-filter: blur(20px);
     animation: ${fadeOut} 0.5s forwards;
   `,
 ];
@@ -93,3 +83,30 @@ export const mainStyle = [
     animation: ${showUp} 0.3s ease-in-out;
   `,
 ];
+
+export const messageStyle = {
+  layout: [
+    flexCenterX2,
+    ,
+    css`
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      background-color: beige;
+      background-color: #000000;
+      backdrop-filter: blur(20px);
+      animation: ${fadeIn} 1s forwards;
+    `,
+  ],
+  text: [
+    css`
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 0 0 20px black;
+      animation: ${showDown} 0.5s 1.5s forwards;
+    `,
+  ],
+};
