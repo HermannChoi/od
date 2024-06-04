@@ -39,3 +39,7 @@ export const widthZeroToFull = keyframes`
 from {width: 0; opacity:0;}
 to {width: 100%; opacity:1;}
 `;
+
+export const spin = keyframes`
+from {transform: rotate(0deg);}
+to {transform: rotate(-360deg);}`;

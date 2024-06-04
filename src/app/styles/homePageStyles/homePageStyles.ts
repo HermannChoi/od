@@ -63,7 +63,7 @@ export const homePageStyles = {
     SignUpBtnHover: [
       css`
         &:hover {
-          border: 1px solid beige;
+          border: 1px solid #7eb1d3;
           background-color: #ffffff;
           color: #000000;
         }

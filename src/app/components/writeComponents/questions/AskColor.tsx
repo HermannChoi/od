@@ -1,10 +1,10 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import { colorOptions } from "@/app/constants/colorOptions";
 import useWriteStore from "@/app/stores/writeStore/useWriteStore";
 import { writePageStyles } from "@/app/styles/writePageStyles/writePageStyles";
 import { useParams, useRouter } from "next/navigation";
+import { colorOptions } from "@/app/constants/\bwriteConstants";
 
 const AskColor = () => {
   const { id } = useParams();

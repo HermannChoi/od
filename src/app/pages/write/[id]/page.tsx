@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import CongratsMessage from "@/app/components/commonComponents/CongratsMessage";
 /** @jsxImportSource @emotion/react */
 
 import NavbarForSignInUp from "@/app/components/signInUpComponents/NavbarForSignInUp";
 import AskColor from "@/app/components/writeComponents/questions/AskColor";
-import AskDiary from "@/app/components/writeComponents/questions/AskDiary";
+import AskContent from "@/app/components/writeComponents/questions/AskContent";
 import AskStars from "@/app/components/writeComponents/questions/AskStars";
 import {
   flexColumnCenterX2,
   mainStyle,
 } from "@/app/styles/commonStyles/commonStyles";
 import { useParams } from "next/navigation";
+import CongratsMessage from "@/app/components/commonComponents/CongratsMessage";
 
 const WriteDetailPage = () => {
   const { id } = useParams();
@@ -23,7 +23,7 @@ const WriteDetailPage = () => {
         {id === "0" ? (
           <AskColor />
         ) : id === "1" ? (
-          <AskDiary />
+          <AskContent />
         ) : (
           id === "2" && <AskStars />
         )}

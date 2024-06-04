@@ -5,14 +5,13 @@ import useWriteStore from "@/app/stores/writeStore/useWriteStore";
 import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
 import { writePageStyles } from "@/app/styles/writePageStyles/writePageStyles";
 import { useParams, useRouter } from "next/navigation";
+import { stars } from "@/app/constants/\bwriteConstants";
 
 const AskStars = () => {
   const { id } = useParams();
   const router = useRouter();
 
   const { answers, setAnswers, resetAnswers } = useWriteStore();
-
-  const stars = ["", "", "", "", ""];
 
   const handleClick = () => {
     router.push(`${Number(id) + 1}`);
@@ -33,7 +32,7 @@ const AskStars = () => {
             <button
               key={i}
               onClick={() => setAnswers("star", i + 1)}
-              css={writePageStyles.askStar.star(i, answers.star)}
+              css={writePageStyles.askStar.star(i, answers.star, 40)}
             ></button>
           );
         })}

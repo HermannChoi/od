@@ -25,6 +25,7 @@ export const signInUpStyles = {
     `,
   ],
   button: [
+    flexCenterX2,
     css`
       width: 100%;
       height: 45px;

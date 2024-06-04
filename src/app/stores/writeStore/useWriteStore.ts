@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 export interface Answers {
   color: string;
-  diary: string;
+  content: string;
   star: number;
 }
 
@@ -13,10 +13,10 @@ export interface UseWriteStore {
 }
 
 const useWriteStore = create<UseWriteStore>((set) => ({
-  answers: { color: "", diary: "", star: 0 },
+  answers: { color: "", content: "", star: 0 },
   setAnswers: (sort, answer) =>
     set((state) => ({ answers: { ...state.answers, [sort]: answer } })),
-  resetAnswers: () => set({ answers: { color: "", diary: "", star: 0 } }),
+  resetAnswers: () => set({ answers: { color: "", content: "", star: 0 } }),
 }));
 
 export default useWriteStore;

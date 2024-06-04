@@ -69,13 +69,13 @@ export const writePageStyles = {
     ],
   },
   askStar: {
-    star: (i: number, star: number) => {
+    star: (i: number, star: number, size: number) => {
       return [
         css`
-          width: 40px;
-          height: 40px;
+          width: ${size}px;
+          height: ${size}px;
           border: 1px solid #ffffff;
-          border-radius: 17px;
+          border-radius: 40%;
           background-color: ${i < star ? "#e8e800" : "#ffffff"};
         `,
       ];

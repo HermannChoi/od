@@ -92,7 +92,7 @@ const SignUpPage = () => {
           {errorMessage && (
             <p css={signInUpStyles.errorMessage}>{errorMessage}</p>
           )}
-          <input type="submit" value={"회원가입"} css={signInUpStyles.button} />
+          <button css={signInUpStyles.button}>회원가입</button>
         </form>
         <div css={signInUpStyles.askingSection}>
           <span css={[`font-size: 0.9rem;`]}>아이디가 이미 있으신가요?</span>

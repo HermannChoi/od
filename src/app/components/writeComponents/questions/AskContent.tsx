@@ -7,7 +7,7 @@ import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
 import { writePageStyles } from "@/app/styles/writePageStyles/writePageStyles";
 import { useParams, useRouter } from "next/navigation";
 
-const AskDiary = () => {
+const AskContent = () => {
   const { id } = useParams();
   const router = useRouter();
 
@@ -23,23 +23,23 @@ const AskDiary = () => {
           autoFocus
           name="diary"
           maxLength={150}
-          value={answers.diary}
-          onChange={(e) => setAnswers("diary", e.target.value)}
+          value={answers.content}
+          onChange={(e) => setAnswers("content", e.target.value)}
           css={[
             writePageStyles.askDiary.textarea,
             `box-shadow: 0 0 10px ${answers.color}`,
           ]}
         ></textarea>
         <p css={writePageStyles.askDiary.textLength}>
-          {answers.diary.length}/150
+          {answers.content.length}/150
         </p>
       </section>
       <button
-        disabled={answers.diary.length === 0 && true}
+        disabled={answers.content.length === 0 && true}
         onClick={() => router.push(`${Number(id) + 1}`)}
         css={[
           signInUpStyles.button,
-          answers.diary.length === 0 && signInUpStyles.disabled,
+          answers.content.length === 0 && signInUpStyles.disabled,
         ]}
       >
         다음
@@ -48,4 +48,4 @@ const AskDiary = () => {
   );
 };
 
-export default AskDiary;
+export default AskContent;

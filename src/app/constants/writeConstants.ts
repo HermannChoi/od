@@ -6,3 +6,5 @@ export const colorOptions = [
   "#ffc0cb",
   "#B266FF",
 ];
+
+export const stars = ["", "", "", "", ""];

@@ -31,9 +31,13 @@ p {
   line-height: 25px;
 }
 
+hr {
+  border: 0.5px solid #ffffff80;
+}
+
 .layout {
   width: 90%;
-  min-width: 350px;
+  min-width: 620px;
   height: 90vh;
   border-radius: 10px;
   background-color: #00000066;

@@ -1,4 +1,5 @@
 "use client";
+import LoadingIcon from "@/app/components/commonComponents/LoadingIcon";
 import WelcomeMessage from "@/app/components/commonComponents/WelcomeMessage";
 /** @jsxImportSource @emotion/react */
 
@@ -31,6 +32,7 @@ const SignInPage = () => {
     if (signInInfo.email === "") return setErrorMessage("이메일을 적어주세요.");
     if (signInInfo.password === "")
       return setErrorMessage("비밀번호를 적어주세요.");
+    console.log("loggedIn");
     setIsLoggedIn(true);
     setTimeout(() => {
       router.push("/");
@@ -62,7 +64,7 @@ const SignInPage = () => {
           />
 
           {errorMessage && <p>{errorMessage}</p>}
-          <input type="submit" value={"로그인"} css={signInUpStyles.button} />
+          <button css={signInUpStyles.button}>로그인</button>
         </form>
         <div css={signInUpStyles.askingSection}>
           <span css={[`font-size: 0.9rem;`]}>아이디가 없으신가요?</span>

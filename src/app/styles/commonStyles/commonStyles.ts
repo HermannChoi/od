@@ -2,8 +2,9 @@ import { css } from "@emotion/react";
 import { fadeIn, fadeOut, showDown, showUp, showUp2 } from "./keyframes";
 
 export const commonColors = {
-  representative: "#a2ffe3",
+  representative: "#7eb1d3",
   background: "#00000066",
+  delete: "#FF6666",
 };
 
 export const flexCenterX2 = css`
@@ -69,8 +70,7 @@ export const coverPageStyle = [
     height: 90vh;
     border-radius: 10px;
     background-color: beige;
-    background-color: #000000;
-    // backdrop-filter: blur(20px);
+    background-color: #00000080;
     animation: ${fadeOut} 0.5s forwards;
   `,
 ];
@@ -94,10 +94,9 @@ export const messageStyle = {
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 30px;
+      border-radius: 10px;
       background-color: beige;
-      background-color: #000000;
-      backdrop-filter: blur(20px);
+      background-color: #00000080;
       animation: ${fadeIn} 1s forwards;
     `,
   ],
