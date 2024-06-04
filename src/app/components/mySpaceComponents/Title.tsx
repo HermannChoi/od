@@ -1,12 +1,12 @@
 "use client";
+import { navbarStyles } from "@/app/styles/commonStyles/navbarStyles";
 /** @jsxImportSource @emotion/react */
 
-import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
 import Link from "next/link";
 
 const Title = () => {
   return (
-    <Link href={"/"} css={homePageStyles.navbar.title}>
+    <Link href={"/"} css={navbarStyles.title}>
       OD
     </Link>
   );

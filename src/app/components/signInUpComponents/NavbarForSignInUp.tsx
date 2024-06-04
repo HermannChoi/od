@@ -1,12 +1,12 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
-import Title from "../commonComponents/Title";
+import Title from "../mySpaceComponents/Title";
+import { navbarStyles } from "@/app/styles/commonStyles/navbarStyles";
 
 const NavbarForSignInUp = () => {
   return (
-    <div css={homePageStyles.navbar.outline}>
+    <div css={navbarStyles.outline}>
       <Title />
       <p>우리들만의 다이어리 공간</p>
     </div>

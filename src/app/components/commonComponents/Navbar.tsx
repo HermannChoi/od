@@ -2,13 +2,13 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
 import { useRouter } from "next/navigation";
 import { navbarMenu } from "@/app/constants/navbarMenu";
 import useNavbarStore from "@/app/stores/navbarStore/useNavbarStore";
-import Title from "./Title";
+import Title from "../mySpaceComponents/Title";
 import { useCookies } from "react-cookie";
 import { useEffect, useState } from "react";
+import { navbarStyles } from "@/app/styles/commonStyles/navbarStyles";
 
 const Navbar = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav css={homePageStyles.navbar.outline}>
+    <nav css={navbarStyles.outline}>
       <Title />
       <section css={[`height: 100%;`]}>
         {navbarMenu.map((menu) => {
@@ -35,30 +35,27 @@ const Navbar = () => {
                 router.push(`${menu.href}`);
                 setWhichMenu(menu.key);
               }}
-              css={homePageStyles.navbar.menuButton(menu.key, whichMenu)}
+              css={navbarStyles.menuButton(menu.key, whichMenu)}
             >
               {menu.name}
             </button>
           );
         })}
       </section>
-      <section css={homePageStyles.navbar.signInUpSection}>
+      <section css={navbarStyles.signInUpSection}>
         {isLoggedIn ? (
-          <button css={homePageStyles.navbar.signInUpButton}>로그아웃</button>
+          <button css={navbarStyles.signInUpButton}>로그아웃</button>
         ) : (
           <>
             <button
               onClick={() => router.push("/pages/signIn")}
-              css={homePageStyles.navbar.signInUpButton}
+              css={navbarStyles.signInUpButton}
             >
               로그인
             </button>
             <button
               onClick={() => router.push("/pages/signUp")}
-              css={[
-                homePageStyles.navbar.signInUpButton,
-                homePageStyles.navbar.SignUpBtnHover,
-              ]}
+              css={[navbarStyles.signInUpButton, navbarStyles.SignUpBtnHover]}
             >
               회원가입
             </button>
