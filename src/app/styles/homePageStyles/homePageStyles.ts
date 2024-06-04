@@ -17,7 +17,7 @@ export const homePageStyles = {
     flexColumnCenter,
     css`
       row-gap: 10px;
-      flex: 0.6;
+      flex: 1;
       height: 100%;
     `,
   ],
@@ -53,23 +53,38 @@ export const homePageStyles = {
   },
   middleSection: {
     vote: {
-      bar: [
-        css`
-          display: flex;
-          justify-content: start;
-          align-items: center;
-          width: 100%;
-          height: 30px;
-          padding: 10px;
-          border: none;
-          border-radius: 10px;
-          background-color: #00000010;
-          cursor: pointer;
-          &:hover {
-            background-color: #00000020;
-          }
-        `,
-      ],
+      bar: (rate: number) => {
+        return [
+          css`
+            position: relative;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #00000010;
+            cursor: pointer;
+            z-index: 1;
+            &:hover {
+              background-color: #00000020;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: ${rate}%;
+              height: 100%;
+              border-radius: 10px;
+              background-color: #00000066;
+              z-index: -1;
+            }
+          `,
+        ];
+      },
     },
     posts: {
       header: [
@@ -84,6 +99,9 @@ export const homePageStyles = {
           display: flex;
           align-items: center;
           gap: 10px;
+          border: none;
+          background-color: transparent;
+          font-size: 1rem;
         `,
       ],
       profile: (size: number) => {

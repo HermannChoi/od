@@ -15,10 +15,10 @@ import { css } from "@emotion/react";
 import Link from "next/link";
 import Image from "next/image";
 import Chat from "@/app/assets/svg/chat.svg";
+import Vote from "@/app/assets/svg/vote.svg";
 import Heart from "@/app/assets/svg/heart.svg";
 import Share from "@/app/assets/svg/share.svg";
 import Visibility from "@/app/assets/svg/visibility.svg";
-import { writePageStyles } from "./styles/writePageStyles/writePageStyles";
 
 export default function Home() {
   const { setWhichMenu } = useNavbarStore();
@@ -33,7 +33,12 @@ export default function Home() {
       <Navbar />
       <main css={[homePageStyles.main]}>
         <section css={[homePageStyles.section]}>
-          <div css={[homePageStyles.commonContentLayout]}>
+          <div
+            css={[
+              homePageStyles.commonContentLayout,
+              `flex-direction: row; justify-content: space-between;`,
+            ]}
+          >
             <div>
               <p>환영합니다.</p>
               <p>
@@ -42,48 +47,76 @@ export default function Home() {
                 </span>{" "}
                 님
               </p>
+              <p>example@email.com</p>
             </div>
-            <p>example@email.com</p>
-            <p>
-              MBTI :{" "}
-              <span css={homePageStyles.leftSection.userInfo.mbti}>INFJ</span>
-            </p>
+
+            <div css={[flexCenterX2]}>
+              <div css={homePageStyles.middleSection.posts.profile(50)}>F</div>
+            </div>
+          </div>
+          <div
+            css={[
+              homePageStyles.commonContentLayout,
+              `flex-direction: row; justify-content: space-between;`,
+            ]}
+          >
+            <p css={[`font-weight: bold;`]}>MBTI :</p>
+            <span css={homePageStyles.leftSection.userInfo.mbti}>INFJ</span>
+          </div>
+          <div
+            css={[
+              homePageStyles.commonContentLayout,
+              `flex-direction: row; justify-content: space-between; align-items: center;`,
+            ]}
+          >
+            <p css={[`font-weight: bold;`]}>본인의 MBTI가 궁금하다면?</p>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={
+                "https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC"
+              }
+              css={[`&:hover {text-decoration: underline;}`]}
+            >
+              검사하러 가기
+            </Link>
           </div>
         </section>
-        <section css={[homePageStyles.section, `flex: 1.5`]}>
-          <div css={homePageStyles.commonContentLayout}>
+        <section css={[homePageStyles.section, `flex: 2.5`]}>
+          <Link href={"/"} css={homePageStyles.commonContentLayout}>
             <p>
               <span css={[`font-weight: bold;`]}>오늘의 투표 :</span> 애인이 내
               동성친구에게 새우 까주는거
             </p>
-            <div css={homePageStyles.middleSection.vote.bar}>가능</div>
-            <div css={homePageStyles.middleSection.vote.bar}>불가능</div>
+            <div css={homePageStyles.middleSection.vote.bar(20)}>
+              가능 (20%)
+            </div>
+            <div css={homePageStyles.middleSection.vote.bar(80)}>
+              불가능 (80%)
+            </div>
             <div css={homePageStyles.middleSection.posts.bottom}>
               <div css={homePageStyles.middleSection.posts.bottomEach}>
                 <Image src={Chat} alt="chat" />
                 <span>1.2k</span>
               </div>
               <div css={homePageStyles.middleSection.posts.bottomEach}>
-                <Image src={Heart} alt="heart" />
-                <span>2.2k</span>
+                <Image src={Vote} alt="vote" />
+                <span>12.2k</span>
               </div>
               <div css={homePageStyles.middleSection.posts.bottomEach}>
                 <Image src={Visibility} alt="view" />
                 <span>23.2k</span>
               </div>
             </div>
-          </div>
-          <div css={homePageStyles.commonContentLayout}>
+          </Link>
+          <Link href={"/"} css={homePageStyles.commonContentLayout}>
             <div css={homePageStyles.middleSection.posts.header}>
-              <Link
-                href={"/"}
-                css={homePageStyles.middleSection.posts.userLink}
-              >
+              <button css={homePageStyles.middleSection.posts.userLink}>
                 <div css={homePageStyles.middleSection.posts.profile(35)}>
                   F
                 </div>
-                <span>위대한홍길동</span>
-              </Link>
+                <span>Hermann</span>
+              </button>
               <button css={homePageStyles.middleSection.posts.requestFriendBtn}>
                 ﹢
               </button>
@@ -114,15 +147,21 @@ export default function Home() {
                 <span>23.2k</span>
               </div>
             </div>
-          </div>
+          </Link>
         </section>
         <section css={[homePageStyles.section]}>
           <div css={homePageStyles.commonContentLayout}>
             <p css={[`font-weight: bold;`]}>상위 MBTI 분표율</p>
-            <div css={homePageStyles.middleSection.vote.bar}>ENTP</div>
-            <div css={homePageStyles.middleSection.vote.bar}>ISTP</div>
-            <div css={homePageStyles.middleSection.vote.bar}>ESTJ</div>
-            <div css={homePageStyles.middleSection.vote.bar}>INTP</div>
+            <div css={homePageStyles.middleSection.vote.bar(28)}>
+              ENTP (28%)
+            </div>
+            <div css={homePageStyles.middleSection.vote.bar(22)}>
+              ISTP (22%)
+            </div>
+            <div css={homePageStyles.middleSection.vote.bar(15)}>
+              ESTJ (15%)
+            </div>
+            <div css={homePageStyles.middleSection.vote.bar(8)}>INTP (8%)</div>
           </div>
           <div
             css={[

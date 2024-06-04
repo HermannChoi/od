@@ -2,6 +2,21 @@ import { css } from "@emotion/react";
 import { flexColumnCenter } from "../commonStyles/commonStyles";
 
 export const writePageStyles = {
+  postOrDiaryBtn: [
+    css`
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+      border: 1px solid #ffffff80;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      background-color: transparent;
+      transition: 0.2s;
+      &:hover {
+        font-size: 1rem;
+      }
+    `,
+  ],
   questions: {
     layout: [
       flexColumnCenter,
@@ -47,7 +62,7 @@ export const writePageStyles = {
       css`
         width: 100%;
         min-height: 40px;
-        max-height: 120px;
+        max-height: 125px;
         padding: 10px;
         border: 1px solid #ffffff80;
         border-radius: 10px;

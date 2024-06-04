@@ -1,17 +1,18 @@
 "use client";
-import LoadingIcon from "@/app/components/commonComponents/LoadingIcon";
-import WelcomeMessage from "@/app/components/commonComponents/WelcomeMessage";
 /** @jsxImportSource @emotion/react */
 
+import WelcomeMessage from "@/app/components/commonComponents/WelcomeMessage";
 import NavbarForSignInUp from "@/app/components/signInUpComponents/NavbarForSignInUp";
 import {
   flexColumnCenter,
   mainStyle,
 } from "@/app/styles/commonStyles/commonStyles";
 import { signInUpStyles } from "@/app/styles/signInUpStyles/signInUpStyles";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SyntheticEvent, useState } from "react";
+import Google from "@/app/assets/svg/google.svg";
 
 const SignInPage = () => {
   const router = useRouter();
@@ -66,6 +67,12 @@ const SignInPage = () => {
           {errorMessage && <p>{errorMessage}</p>}
           <button css={signInUpStyles.button}>로그인</button>
         </form>
+        <div css={signInUpStyles.form}>
+          <button css={signInUpStyles.button}>
+            <Image src={Google} alt="google" />
+            <span css={[`padding-left: 10px;`]}>구글 계정으로 로그인하기</span>
+          </button>
+        </div>
         <div css={signInUpStyles.askingSection}>
           <span css={[`font-size: 0.9rem;`]}>아이디가 없으신가요?</span>
           <Link href={"/pages/signUp"} css={signInUpStyles.link}>
