@@ -46,6 +46,7 @@ export const homePageStyles = {
         css`
           padding: 3px 8px;
           border: 1px solid #ffffff;
+          border-radius: 5px;
           font-weight: bold;
         `,
       ],
@@ -99,9 +100,16 @@ export const homePageStyles = {
           display: flex;
           align-items: center;
           gap: 10px;
+          height: max-content;
+          padding: 5px;
           border: none;
+          border-radius: 10px;
           background-color: transparent;
           font-size: 1rem;
+          transition: 0.2s;
+          &:hover {
+            background-color: #00000044;
+          }
         `,
       ],
       profile: (size: number) => {
@@ -120,14 +128,19 @@ export const homePageStyles = {
           `,
         ];
       },
-      requestFriendBtn: [
+      followingBtn: [
         flexCenterX2,
         css`
           width: 35px;
           height: 35px;
           border: none;
+          border-radius: 50%;
           background-color: transparent;
           font-size: 25px;
+          transition: 0.2s;
+          &:hover {
+            background-color: #00000044;
+          }
         `,
       ],
       date: [

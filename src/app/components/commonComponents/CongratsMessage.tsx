@@ -3,10 +3,14 @@
 
 import { messageStyle } from "@/app/styles/commonStyles/commonStyles";
 
-const CongratsMessage = () => {
+export interface CongratsMessage {
+  message: string;
+}
+
+const CongratsMessage: React.FC<CongratsMessage> = ({ message }) => {
   return (
     <div css={messageStyle.layout}>
-      <span css={messageStyle.text}>작성을 완료했어요!</span>
+      <span css={messageStyle.text}>{message}</span>
     </div>
   );
 };

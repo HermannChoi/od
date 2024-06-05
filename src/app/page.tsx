@@ -8,19 +8,21 @@ import {
 } from "./styles/commonStyles/commonStyles";
 import Navbar from "./components/commonComponents/Navbar";
 import useNavbarStore from "./stores/navbarStore/useNavbarStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { navbarMenu } from "./constants/navbarMenu";
 import { homePageStyles } from "./styles/homePageStyles/homePageStyles";
-import { css } from "@emotion/react";
 import Link from "next/link";
 import Image from "next/image";
 import Chat from "@/app/assets/svg/chat.svg";
 import Vote from "@/app/assets/svg/vote.svg";
-import Heart from "@/app/assets/svg/heart.svg";
 import Share from "@/app/assets/svg/share.svg";
 import Visibility from "@/app/assets/svg/visibility.svg";
+import { diaryStyles } from "./styles/diaryStyles/diaryStyles";
+import Heart from "./components/commonComponents/Heart";
 
 export default function Home() {
+  const [isHearted, setIsHearted] = useState(false);
+
   const { setWhichMenu } = useNavbarStore();
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Home() {
             ]}
           >
             <div>
-              <p>환영합니다.</p>
+              <p>환영합니다,</p>
               <p>
                 <span css={homePageStyles.leftSection.userInfo.name}>
                   위대한홍길동
@@ -51,7 +53,14 @@ export default function Home() {
             </div>
 
             <div css={[flexCenterX2]}>
-              <div css={homePageStyles.middleSection.posts.profile(50)}>F</div>
+              <div
+                css={[
+                  homePageStyles.middleSection.posts.profile(50),
+                  `font-size: 2rem;`,
+                ]}
+              >
+                F
+              </div>
             </div>
           </div>
           <div
@@ -109,6 +118,7 @@ export default function Home() {
               </div>
             </div>
           </Link>
+          <hr css={[`width: 100%;`]} />
           <Link href={"/"} css={homePageStyles.commonContentLayout}>
             <div css={homePageStyles.middleSection.posts.header}>
               <button css={homePageStyles.middleSection.posts.userLink}>
@@ -117,7 +127,7 @@ export default function Home() {
                 </div>
                 <span>Hermann</span>
               </button>
-              <button css={homePageStyles.middleSection.posts.requestFriendBtn}>
+              <button css={homePageStyles.middleSection.posts.followingBtn}>
                 ﹢
               </button>
             </div>
@@ -135,16 +145,21 @@ export default function Home() {
                 <span>1.2k</span>
               </div>
               <div css={homePageStyles.middleSection.posts.bottomEach}>
-                <Image src={Heart} alt="chat" />
-                <span>2.2k</span>
-              </div>
-              <div css={homePageStyles.middleSection.posts.bottomEach}>
-                <Image src={Share} alt="chat" />
-                <span>528</span>
+                <button
+                  onClick={() => setIsHearted(!isHearted)}
+                  css={diaryStyles.heartBtn}
+                >
+                  <Heart isHearted={isHearted} />
+                </button>
+                <span>2200</span>
               </div>
               <div css={homePageStyles.middleSection.posts.bottomEach}>
                 <Image src={Visibility} alt="chat" />
                 <span>23.2k</span>
+              </div>
+              <div css={homePageStyles.middleSection.posts.bottomEach}>
+                <Image src={Share} alt="chat" />
+                <span>528</span>
               </div>
             </div>
           </Link>
@@ -173,7 +188,7 @@ export default function Home() {
             <p>1,293 명</p>
           </div>
           <div css={homePageStyles.commonContentLayout}>
-            <strong>친구</strong>
+            <strong>팔로잉</strong>
             <Link href={"/"} css={homePageStyles.middleSection.posts.userLink}>
               <div css={homePageStyles.middleSection.posts.profile(35)}>F</div>
               <span>위대한홍길동</span>

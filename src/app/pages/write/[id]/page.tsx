@@ -17,7 +17,7 @@ const WriteDetailPage = () => {
   const { id } = useParams();
   return (
     <>
-      {id === "3" && <CongratsMessage />}
+      {id === "3" && <CongratsMessage message={"오늘도 수고하셨어요."} />}
       <NavbarForSignInUp />
       <main css={[mainStyle, flexColumnCenterX2]}>
         {id === "0" ? (

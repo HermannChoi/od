@@ -39,7 +39,7 @@ const MySpace = () => {
     color: "#7eb1d3",
     content:
       "하늘을 우러러 한 점 부끄럼 없이, 오늘도 나는 가나다라 마바사 아자차카",
-    star: 5,
+    star: 3,
   };
 
   return (
@@ -54,7 +54,7 @@ const MySpace = () => {
             <span css={mySpaceStyles.userNameSpan}>최윤석</span>님의 공간
           </p>
           <div css={[flexCenterX2, `gap: 10px;`]}>
-            <select name="" id="" css={mySpaceStyles.select}>
+            <select css={mySpaceStyles.select}>
               {orderOptions.map((option, i) => {
                 return (
                   <option key={i} value={option}>
@@ -79,7 +79,7 @@ const MySpace = () => {
         </section>
         <section>
           <Link
-            href={"/"}
+            href={"/pages/diary/0"}
             css={
               isGrid
                 ? mySpaceStyles.eachDiaryGrid.layout(sample)

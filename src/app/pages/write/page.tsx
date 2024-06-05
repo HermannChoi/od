@@ -53,7 +53,7 @@ const WritePage = () => {
             <>
               <h2>게시글 작성</h2>
               <textarea
-                name=""
+                autoFocus
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 css={[
