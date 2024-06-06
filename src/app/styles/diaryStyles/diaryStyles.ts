@@ -17,12 +17,28 @@ export const diaryStyles = {
       background-color: transparent;
     `,
   ],
-  commentsContainer: [
-    homePageStyles.commonContentLayout,
-    css`
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    `,
-  ],
+  comment: {
+    container: [
+      homePageStyles.commonContentLayout,
+      css`
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        background-color: transparent;
+      `,
+    ],
+    replyBtn: [
+      css`
+        width: fit-content;
+        padding: 3px 6px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 3px;
+        background-color: transparent;
+        &:hover {
+          background-color: #00000044;
+        }
+      `,
+    ],
+  },
 };
