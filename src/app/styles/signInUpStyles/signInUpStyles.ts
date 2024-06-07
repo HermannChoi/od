@@ -38,7 +38,7 @@ export const signInUpStyles = {
       cursor: pointer;
       background-color: transparent;
       &:hover,
-      &:focus {
+      &:active {
         background-color: #00000044;
       }
     `,

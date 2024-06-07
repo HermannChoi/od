@@ -67,7 +67,6 @@ export const homePageStyles = {
             border: none;
             border-radius: 10px;
             background-color: #00000010;
-            cursor: pointer;
             z-index: 1;
             &:hover {
               background-color: #00000020;
@@ -81,6 +80,7 @@ export const homePageStyles = {
               height: 100%;
               border-radius: 10px;
               background-color: #00000066;
+              transition: 0.2s;
               z-index: -1;
             }
           `,

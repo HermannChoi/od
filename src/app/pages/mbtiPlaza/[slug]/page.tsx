@@ -11,7 +11,7 @@ const PlazaDeatilPage = () => {
     <>
       <Navbar />
       <main css={mainStyle}>
-        <h1>{slug}의 공간</h1>
+        <h1>{slug}들의 공간</h1>
       </main>
     </>
   );
