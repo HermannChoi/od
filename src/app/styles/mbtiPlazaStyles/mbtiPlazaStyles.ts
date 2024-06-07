@@ -4,13 +4,23 @@ import {
   flexColumnCenterX2,
   widthHeightFull,
 } from "../commonStyles/commonStyles";
+import { signInUpStyles } from "../signInUpStyles/signInUpStyles";
 
 export const mbtiPlazaStyles = {
   firstSection: [
     flexCenterX2,
     css`
       gap: 20px;
-      width: 50%;
+      width: 40%;
+      z-index: 1;
+    `,
+  ],
+  select: [
+    signInUpStyles.button,
+    css`
+      text-align: center;
+      font-weight: bold;
+      font-family: math;
     `,
   ],
   secondSection: (degree: number) => {
@@ -37,12 +47,13 @@ export const mbtiPlazaStyles = {
         background-color: #000000cc;
         font-family: math;
         font-size: 1rem;
-        transform: rotateY(${i * 90}deg) translateZ(400px);
+        transform: rotateY(${i * 60}deg) translateZ(500px);
         transition: 0.2s;
         &:hover {
           border-radius: 10px;
           background-color: #000000;
           font-weight: bold;
+          transform: rotateY(${i * 60}deg) translateZ(500px) translateY(-10px);
         }
       `,
     ];
