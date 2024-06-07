@@ -42,4 +42,5 @@ hr {
   border-radius: 10px;
   background-color: #00000066;
   backdrop-filter: blur(20px);
+  overflow: hidden;
 }

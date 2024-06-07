@@ -80,7 +80,7 @@ export const mainStyle = [
     width: 100%;
     height: calc(100% - 60px);
     padding: 20px 10px;
-    animation: ${showUp} 0.3s ease-in-out;
+    // animation: ${showUp} 0.3s ease-in-out;
   `,
 ];
 

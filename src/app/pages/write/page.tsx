@@ -52,22 +52,30 @@ const WritePage = () => {
           ) : (
             <>
               <h2>게시글 작성</h2>
-              <textarea
-                autoFocus
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                css={[
-                  writePageStyles.askDiary.textarea,
-                  `height: 125px; max-height: 300px;`,
-                ]}
-                maxLength={500}
-              ></textarea>
-              <p css={writePageStyles.askDiary.textLength}>
-                {content.length}/500
-              </p>
-              <button css={[signInUpStyles.button, `margin-bottom: 40px;`]}>
-                업로드
-              </button>
+              <form css={[`width: 100%;`]}>
+                <textarea
+                  autoFocus
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  css={[
+                    writePageStyles.askDiary.textarea,
+                    `height: 125px; max-height: 300px;`,
+                  ]}
+                  maxLength={500}
+                ></textarea>
+                <p css={writePageStyles.askDiary.textLength}>
+                  {content.length}/500
+                </p>
+                <button
+                  disabled={content.length === 0 && true}
+                  css={[
+                    signInUpStyles.button,
+                    content.length === 0 && signInUpStyles.disabled,
+                  ]}
+                >
+                  업로드
+                </button>
+              </form>
             </>
           )}
         </div>

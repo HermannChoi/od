@@ -31,7 +31,6 @@ export const navbarStyles = {
         border: none;
         background-color: ${key === whichMenu ? `#00000044` : `transparent`};
         font-size: 1rem;
-        transition: background-color 0.2s;
         ${key === whichMenu && `border-bottom: 1px solid white;`}
         &:hover {
           background-color: #00000066;

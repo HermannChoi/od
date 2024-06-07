@@ -2,7 +2,6 @@
 "use client";
 /** @jsxImportSource @emotion/react */
 
-import { coverPageStyle } from "./styles/commonStyles/commonStyles";
 import Navbar from "./components/commonComponents/Navbar";
 import useNavbarStore from "./stores/navbarStore/useNavbarStore";
 import { useEffect } from "react";
@@ -27,7 +26,6 @@ export default function Home() {
 
   return (
     <>
-      <div css={coverPageStyle} />
       <Navbar />
       <main css={[homePageStyles.main]}>
         <section css={[homePageStyles.section]}>
