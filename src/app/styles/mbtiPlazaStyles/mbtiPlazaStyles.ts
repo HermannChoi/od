@@ -19,7 +19,6 @@ export const mbtiPlazaStyles = {
     signInUpStyles.button,
     css`
       text-align: center;
-      font-weight: bold;
       font-family: math;
     `,
   ],
@@ -46,7 +45,6 @@ export const mbtiPlazaStyles = {
         border: 1px solid white;
         background-color: #000000cc;
         font-family: math;
-        font-size: 1rem;
         transform: rotateY(${i * 60}deg) translateZ(500px);
         transition: 0.2s;
         &:hover {

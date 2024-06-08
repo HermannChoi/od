@@ -48,7 +48,6 @@ const MbtiPlazePage = () => {
   }, []);
 
   useEffect(() => {
-    console.log(degree);
     if (degree === 0) {
       return setDegree(360);
     }
