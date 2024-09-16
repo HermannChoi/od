@@ -12,7 +12,6 @@ const LinkTestMbti = () => {
         `flex-direction: row; justify-content: space-between; align-items: center;`,
       ]}
     >
-      <p css={[`font-weight: bold;`]}>본인의 MBTI가 궁금하다면?</p>
       <Link
         target="_blank"
         rel="noopener noreferrer"
@@ -21,7 +20,7 @@ const LinkTestMbti = () => {
         }
         css={[`&:hover {text-decoration: underline;}`]}
       >
-        검사하러 가기
+        본인의 MBTI가 궁금하다면?
       </Link>
     </div>
   );

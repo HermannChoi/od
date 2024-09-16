@@ -11,6 +11,7 @@ export const mbtiPlazaStyles = {
     flexCenterX2,
     css`
       gap: 20px;
+      min-width: 300px;
       width: 40%;
       z-index: 1;
     `,
@@ -43,7 +44,7 @@ export const mbtiPlazaStyles = {
         width: 100px;
         height: 100px;
         border: 1px solid white;
-        background-color: #000000cc;
+        background-color: #000000;
         font-family: math;
         transform: rotateY(${i * 60}deg) translateZ(500px);
         transition: 0.2s;
@@ -52,6 +53,11 @@ export const mbtiPlazaStyles = {
           background-color: #000000;
           font-weight: bold;
           transform: rotateY(${i * 60}deg) translateZ(500px) translateY(-10px);
+        }
+
+        @media (max-width: 750px) {
+          width: 70px;
+          height: 70px;
         }
       `,
     ];

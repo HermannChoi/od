@@ -3,19 +3,18 @@
 /** @jsxImportSource @emotion/react */
 
 import { useRouter } from "next/navigation";
-import { navbarMenu } from "@/app/constants/navbarMenu";
-import useNavbarStore from "@/app/stores/navbarStore/useNavbarStore";
 import Title from "../mySpaceComponents/Title";
 import { useCookies } from "react-cookie";
 import { useEffect, useState } from "react";
 import { navbarStyles } from "@/app/styles/commonStyles/navbarStyles";
+import NavbarMain from "./NavbarMain";
 
 const Navbar = () => {
   const router = useRouter();
-  const [cookies] = useCookies(["token"]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const { whichMenu, setWhichMenu } = useNavbarStore();
+  const [cookies] = useCookies(["token"]);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (cookies.token) {
@@ -26,22 +25,7 @@ const Navbar = () => {
   return (
     <nav css={navbarStyles.outline}>
       <Title />
-      <section css={[`height: 100%;`]}>
-        {navbarMenu.map((menu) => {
-          return (
-            <button
-              key={menu.key}
-              onClick={() => {
-                router.push(`${menu.href}`);
-                setWhichMenu(menu.key);
-              }}
-              css={navbarStyles.menuButton(menu.key, whichMenu)}
-            >
-              {menu.name}
-            </button>
-          );
-        })}
-      </section>
+      <NavbarMain />
       <section css={navbarStyles.signInUpSection}>
         {isLoggedIn ? (
           <button css={navbarStyles.signInUpButton}>로그아웃</button>

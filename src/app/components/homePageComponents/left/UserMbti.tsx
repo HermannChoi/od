@@ -1,4 +1,5 @@
 "use client";
+import { homePageLSectionSt } from "@/app/styles/homePageStyles/homePageLSectionSt";
 /** @jsxImportSource @emotion/react */
 
 import { homePageStyles } from "@/app/styles/homePageStyles/homePageStyles";
@@ -12,7 +13,7 @@ const UserMbti = () => {
       ]}
     >
       <p css={[`font-weight: bold;`]}>MBTI :</p>
-      <span css={homePageStyles.leftSection.userInfo.mbti}>INFJ</span>
+      <span css={homePageLSectionSt.userInfo.mbti}>INFJ</span>
     </div>
   );
 };

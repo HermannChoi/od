@@ -39,13 +39,13 @@ const DiarySection = () => {
             : mySpaceStyles.eachDiaryLine.layout(sample)
         }
       >
-        <p>{sample.date}</p>
-        <p css={mySpaceStyles.eachDiaryGrid.content}>
+        <p css={mySpaceStyles.eachDiaryGrid.date(isGrid)}>{sample.date}</p>
+        <p css={mySpaceStyles.eachDiaryGrid.content(isGrid)}>
           {sample.content.length <= 37
             ? sample.content
             : sample.content.slice(0, 37) + "..."}
         </p>
-        <hr />
+        {isGrid && <hr />}
         <div
           css={[
             writePageStyles.questions.contentSection,

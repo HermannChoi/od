@@ -33,8 +33,8 @@ const MySpace = () => {
         <DeleteModal setIsDeleteBtnClicked={setIsDeleteBtnClicked} />
       )}
       <main css={[mySpaceStyles.MSmainStyle]}>
-        <section css={mySpaceStyles.topSection}>
-          <p>
+        <section css={mySpaceStyles.topSection.container}>
+          <p css={mySpaceStyles.topSection.name}>
             <span css={mySpaceStyles.userNameSpan}>최윤석</span>님의 공간
           </p>
           <div css={[flexCenterX2, `gap: 10px;`]}>
@@ -61,9 +61,11 @@ const MySpace = () => {
         </section>
         <hr />
         <section css={mySpaceStyles.infoSection}>
-          <p css={mySpaceStyles.eachDiaryGrid.content}>작성된 다이어리 : 1개</p>
-          <p css={mySpaceStyles.eachDiaryGrid.content}>평균 글자 수 : 37자</p>
-          <p css={mySpaceStyles.eachDiaryGrid.content}>평균 평점 : 5점</p>
+          <p css={mySpaceStyles.eachDiaryGrid.content()}>
+            작성된 다이어리 : 1개
+          </p>
+          <p css={mySpaceStyles.eachDiaryGrid.content()}>평균 글자 수 : 37자</p>
+          <p css={mySpaceStyles.eachDiaryGrid.content()}>평균 평점 : 5점</p>
         </section>
         {filter === "다이어리" ? <DiarySection /> : <></>}
       </main>

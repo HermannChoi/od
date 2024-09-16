@@ -16,13 +16,20 @@ export const mySpaceStyles = {
       row-gap: 5px;
     `,
   ],
-  topSection: [
-    css`
-      display: flex;
-      justify-content: space-between;
-      align-items: bottom;
-    `,
-  ],
+  topSection: {
+    container: [
+      css`
+        display: flex;
+        justify-content: space-between;
+        align-items: bottom;
+      `,
+    ],
+    name: [
+      css`
+        width: 200px;
+      `,
+    ],
+  },
   userNameSpan: [
     css`
       font-size: 2rem;
@@ -31,7 +38,8 @@ export const mySpaceStyles = {
   ],
   select: [
     css`
-      width: 250px;
+      width: 100%;
+      // max-width: 250px;
       height: 30px;
       border: 1px solid #ffffff80;
       background-color: transparent;
@@ -70,6 +78,7 @@ export const mySpaceStyles = {
           position: relative;
           display: flex;
           flex-direction: column;
+          justify-content: center;
           row-gap: 5px;
           width: 200px;
           height: max-content;
@@ -102,11 +111,21 @@ export const mySpaceStyles = {
         }
       `,
     ],
-    content: [
-      css`
-        font-size: 0.8rem;
-      `,
-    ],
+    date: (isGrid: boolean) => {
+      return [
+        css`
+          ${!isGrid && "font-size: 0.8rem;"}
+        `,
+      ];
+    },
+    content: (isGrid?: boolean) => {
+      return [
+        css`
+          ${!isGrid && `height: 100%; overflow: hidden;`}
+          font-size: 0.8rem;
+        `,
+      ];
+    },
   },
   eachDiaryLine: {
     layout: (diary: Answers) => {
@@ -116,8 +135,9 @@ export const mySpaceStyles = {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 10px;
           width: 100%;
-          height: max-content;
+          height: 40px;
           padding: 5px;
           border: 2px solid ${diary.color}80;
           border-radius: 10px;

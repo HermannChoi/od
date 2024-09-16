@@ -3,10 +3,10 @@
 /** @jsxImportSource @emotion/react */
 
 import Navbar from "@/app/components/commonComponents/Navbar";
-import FollowingList from "@/app/components/homePageComponents/FollowingList";
-import TotalMbtiRate from "@/app/components/homePageComponents/TotalMbtiRate";
-import UserInfo from "@/app/components/homePageComponents/UserInfo";
-import UserMbti from "@/app/components/homePageComponents/UserMbti";
+import FollowingList from "@/app/components/homePageComponents/right/FollowingList";
+import TotalMbtiRate from "@/app/components/homePageComponents/right/TotalMbtiRate";
+import UserInfo from "@/app/components/homePageComponents/left/UserInfo";
+import UserMbti from "@/app/components/homePageComponents/left/UserMbti";
 import PostBottom from "@/app/components/postComponents/PostBottom";
 import PostTop from "@/app/components/postComponents/PostTop";
 import { navbarMenu } from "@/app/constants/navbarMenu";

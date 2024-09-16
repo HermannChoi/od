@@ -34,24 +34,6 @@ export const homePageStyles = {
       background-color: #00000044;
     `,
   ],
-  leftSection: {
-    userInfo: {
-      name: [
-        css`
-          font-size: 1.5rem;
-          font-weight: bold;
-        `,
-      ],
-      mbti: [
-        css`
-          padding: 3px 8px;
-          border: 1px solid #ffffff;
-          border-radius: 5px;
-          font-weight: bold;
-        `,
-      ],
-    },
-  },
   middleSection: {
     vote: {
       bar: (rate: number) => {

@@ -23,14 +23,32 @@ export const navbarStyles = {
       }
     `,
   ],
+  navbarMainContainer: [
+    css`
+      height: 100%;
+      z-index: 100;
+
+      @media (max-width: 750px) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 60px;
+      }
+    `,
+  ],
   menuButton: (key: string, whichMenu: string) => {
     return [
       css`
+        flex: 1;
         height: 100%;
         padding: 0 20px;
         border: none;
         background-color: ${key === whichMenu ? `#00000044` : `transparent`};
-        font-size: 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
         ${key === whichMenu && `border-bottom: 1px solid white;`}
         &:hover {
           background-color: #00000066;
