@@ -27,7 +27,6 @@ export const homePageStyles = {
       flex-direction: column;
       row-gap: 10px;
       width: 100%;
-      height: max-content;
       padding: 10px;
       border: none;
       border-radius: 10px;

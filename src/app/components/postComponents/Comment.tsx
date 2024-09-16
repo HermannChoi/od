@@ -16,33 +16,25 @@ const Comment = () => {
   return (
     <div
       css={[
-        diaryStyles.comment.container,
-        flexCenterX2,
-        `justify-content: space-around;`,
+        css`
+          display: flex;
+          gap: 10px;
+          width: 100%;
+        `,
       ]}
     >
-      <div
-        css={[
-          css`
-            display: flex;
-            gap: 10px;
-            width: 100%;
-          `,
-        ]}
-      >
-        <div>
-          <Link href={"/"} css={homePageStyles.middleSection.posts.profile(35)}>
-            J
-          </Link>
-        </div>
-        <div css={[`display: flex; flex-direction: column;`]}>
-          <strong>Alex</strong>
-          <p css={[css``]}>
-            Impressive. I like this part of the poem too. Can you let me know
-            the name of the writer pls?
-          </p>
-          <button css={diaryStyles.comment.replyBtn}>답글달기</button>
-        </div>
+      <div>
+        <Link href={"/"} css={homePageStyles.middleSection.posts.profile(35)}>
+          J
+        </Link>
+      </div>
+      <div css={[`display: flex; flex-direction: column;`]}>
+        <strong>Alex</strong>
+        <p css={[css``]}>
+          Impressive. I like this part of the poem too. Can you let me know the
+          name of the writer pls?
+        </p>
+        <button css={diaryStyles.comment.replyBtn}>답글달기</button>
       </div>
       <div css={[flexColumnCenterX2]}>
         <button css={diaryStyles.heartBtn}>

@@ -77,7 +77,7 @@ const MbtiPlazePage = () => {
   return (
     <>
       <Navbar />
-      <main css={[mainStyle, flexColumnCenterX2]}>
+      <main css={[mainStyle, flexColumnCenterX2, `height: 80vh;`]}>
         <section css={mbtiPlazaStyles.firstSection}>
           <button
             onClick={() =>

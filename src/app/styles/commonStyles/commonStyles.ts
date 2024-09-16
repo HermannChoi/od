@@ -78,10 +78,13 @@ export const coverPageStyle = [
 export const mainStyle = [
   css`
     width: 100%;
-    height: calc(100% - 60px);
     padding: 20px 10px;
     animation: ${showUp} 0.3s ease-in-out;
-    overflow: hidden;
+    overflow: auto;
+
+    @media (max-width: 750px) {
+      padding-bottom: 80px;
+    }
   `,
 ];
 
@@ -103,7 +106,7 @@ export const messageStyle = {
   ],
   text: [
     css`
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: bold;
       text-shadow: 0 0 20px black;
       animation: ${showDown} 0.5s 1.5s forwards;

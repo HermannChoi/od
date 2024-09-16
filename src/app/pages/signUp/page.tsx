@@ -42,7 +42,7 @@ const SignUpPage = () => {
     <>
       <NavbarForSignInUp />
       <main css={[mainStyle, flexColumnCenter, `gap: 50px;`]}>
-        <h1 css={[`margin-top: 100px;`]}>Sign Up</h1>
+        <h1>Sign Up</h1>
         <form onSubmit={handleSubmit} css={signInUpStyles.form}>
           <input
             autoFocus

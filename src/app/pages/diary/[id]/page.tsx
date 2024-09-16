@@ -23,7 +23,13 @@ const DiaryPage = () => {
     <>
       <Navbar />
       <main css={[flexColumnCenter]}>
-        <div css={[mainStyle, flexColumnCenter, `row-gap: 10px; width: 50%;`]}>
+        <div
+          css={[
+            mainStyle,
+            flexColumnCenter,
+            `row-gap: 10px; max-width: 700px;`,
+          ]}
+        >
           <section css={[homePageStyles.commonContentLayout]}>
             <div css={homePageStyles.middleSection.posts.header}>
               <button css={homePageStyles.middleSection.posts.userLink}>
@@ -49,12 +55,7 @@ const DiaryPage = () => {
           <section css={homePageStyles.commonContentLayout}>
             <CommentWriteForm />
           </section>
-          <section
-            css={[
-              homePageStyles.commonContentLayout,
-              `flex-direction: column;`,
-            ]}
-          >
+          <section css={[homePageStyles.commonContentLayout]}>
             <Comment />
           </section>
         </div>

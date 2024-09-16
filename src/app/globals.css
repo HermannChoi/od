@@ -10,9 +10,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 100vh;
   background-color: #7eb1d3;
 }
 
@@ -38,17 +36,17 @@ hr {
 .layout {
   width: 90%;
   min-width: 360px;
-  height: 90vh;
+  min-height: 90vh;
   border-radius: 10px;
+  margin-top: 3rem;
   background-color: #00000066;
-  backdrop-filter: blur(20px);
-  overflow: hidden;
 }
 
 @media (max-width: 750px) {
   .layout {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     border-radius: 0;
+    margin-top: 0;
   }
 }

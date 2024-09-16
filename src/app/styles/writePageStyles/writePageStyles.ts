@@ -22,7 +22,8 @@ export const writePageStyles = {
       flexColumnCenter,
       css`
         row-gap: 20px;
-        width: 30%;
+        width: 100%;
+        max-width: 500px;
       `,
     ],
     qustion: [

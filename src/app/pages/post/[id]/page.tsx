@@ -18,7 +18,13 @@ const PostPage = () => {
     <>
       <Navbar />
       <main css={[flexColumnCenter]}>
-        <div css={[mainStyle, flexColumnCenter, `row-gap: 10px; width: 50%;`]}>
+        <div
+          css={[
+            mainStyle,
+            flexColumnCenter,
+            `row-gap: 10px; max-width: 700px;`,
+          ]}
+        >
           <section css={[homePageStyles.commonContentLayout]}>
             <PostTop />
             <PostArticle />

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { commonColors } from "./commonStyles";
 
 export const navbarStyles = {
   outline: [
@@ -33,9 +34,9 @@ export const navbarStyles = {
         bottom: 0;
         left: 0;
         display: flex;
-        justify-content: space-around;
         width: 100%;
         height: 60px;
+        background-color: #3e596b;
       }
     `,
   ],

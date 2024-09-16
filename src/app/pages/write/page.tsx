@@ -35,7 +35,9 @@ const WritePage = () => {
     <>
       <Navbar />
       <main css={[mainStyle, flexColumnCenterX2]}>
-        <div css={[flexColumnCenter, `width: 500px; gap: 5px;`]}>
+        <div
+          css={[flexColumnCenter, `width: 90%; max-width: 500px; gap: 5px;`]}
+        >
           <button
             onClick={() => setIsDiary(!isDiary)}
             css={writePageStyles.postOrDiaryBtn}
