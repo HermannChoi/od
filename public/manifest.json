@@ -1,0 +1,37 @@
+{
+  "name": "OD",
+  "short_name": "OD",
+  "description": "Diary and Community",
+
+  "theme_color": "#4e7086",
+  "background_color": "#4e7086",
+  "icons": [
+    {
+      "src": "/png/192icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/png/512icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/png/192icon.png",
+      "sizes": "192x192",
+      "purpose": "maskable",
+      "type": "image/png"
+    },
+    {
+      "src": "/png/512icon.png",
+      "sizes": "512x512",
+      "purpose": "maskable",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "ko-KR",
+  "start_url": "/"
+}

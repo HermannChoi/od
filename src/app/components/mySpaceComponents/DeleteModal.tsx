@@ -31,7 +31,7 @@ const DeleteModal: React.FC<DeleteModal> = ({ setIsDeleteBtnClicked }) => {
         </button>
         <p
           css={[
-            mySpaceStyles.eachDiaryGrid.content,
+            mySpaceStyles.eachDiaryGrid.content(),
             `margin-top: 10px; text-align: center;`,
           ]}
         >
